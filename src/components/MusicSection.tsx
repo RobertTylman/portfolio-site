@@ -16,8 +16,8 @@ const tracks = [
 
 const pianoVideos = [
   { title: "Gypsy Woman", url: "https://vimeo.com/1038732482" },
-  { title: "Just The Two Of Us", url: "https://vimeo.com/1038733696" },
-  { title: "Great Pumpkin Waltz", url: "https://vimeo.com/1038733606" },
+  { title: "Great Pumpkin Waltz", url: "https://vimeo.com/1038733696" },
+  { title: "Just The Two Of Us", url: "https://vimeo.com/1038733606" },
   { title: "Fireflies", url: "https://vimeo.com/1038733505" },
 ];
 
@@ -218,7 +218,7 @@ const MusicSection = ({ onPlayStateChange }: MusicSectionProps) => {
     rafRef.current = requestAnimationFrame(animate);
   };
 
-  const setupAudioContext = () => {
+  const setupAudioContext = async () => {
     if (!audioContextRef.current && audioRef.current) {
       const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
       const ctx = new AudioContextClass();
@@ -235,7 +235,7 @@ const MusicSection = ({ onPlayStateChange }: MusicSectionProps) => {
       analyser.connect(ctx.destination);
     }
     if (audioContextRef.current?.state === 'suspended') {
-      audioContextRef.current.resume();
+      await audioContextRef.current.resume();
     }
   };
 
@@ -256,7 +256,7 @@ const MusicSection = ({ onPlayStateChange }: MusicSectionProps) => {
     }
   };
 
-  const handleTrackClick = (index: number) => {
+  const handleTrackClick = async (index: number) => {
     if (!audioRef.current) return;
 
     if (currentTrackIndex === index) {
@@ -270,11 +270,15 @@ const MusicSection = ({ onPlayStateChange }: MusicSectionProps) => {
         }
       } else {
         pauseAllVideos();
-        setupAudioContext();
+        await setupAudioContext();
         paletteRef.current = generateRandomPalette();
-        audioRef.current.play();
-        setIsPlaying(true);
-        animate();
+        try {
+          await audioRef.current.play();
+          setIsPlaying(true);
+          animate();
+        } catch (err) {
+          console.error("Error playing audio:", err);
+        }
       }
     } else {
       // Play new track
@@ -287,19 +291,23 @@ const MusicSection = ({ onPlayStateChange }: MusicSectionProps) => {
       setProgress(0);
       audioRef.current.src = tracks[index].audio;
       audioRef.current.load();
-      audioRef.current.play()
-        .then(() => {
-          setIsPlaying(true);
-          setupAudioContext();
-          paletteRef.current = generateRandomPalette();
-          animate();
-        })
-        .catch(err => console.error("Error playing audio:", err));
+
+      // Setup AudioContext BEFORE playing (required for mobile)
+      await setupAudioContext();
+      paletteRef.current = generateRandomPalette();
+
+      try {
+        await audioRef.current.play();
+        setIsPlaying(true);
+        animate();
+      } catch (err) {
+        console.error("Error playing audio:", err);
+      }
     }
   };
 
   return (
-    <section id="music" className="pt-10 pb-32 px-6">
+    <section id="music" className="pt-10 pb-12 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="relative overflow-hidden rounded-2xl p-8 -mx-8 mb-8">
           <canvas

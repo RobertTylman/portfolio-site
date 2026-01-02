@@ -73,11 +73,13 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-standard);
+    overflow-x: hidden;
   }
 
   h1,

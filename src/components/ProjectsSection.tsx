@@ -129,17 +129,24 @@ const ProjectsSection = () => {
           0%, 100% { transform: translateY(-50%) scale(1); }
           50% { transform: translateY(-50%) scale(1.15); }
         }
+        @keyframes scalePulseInline {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.15); }
+        }
         .animate-scale-pulse {
           animation: scalePulse 2s ease-in-out infinite;
+        }
+        .animate-scale-pulse-inline {
+          animation: scalePulseInline 2s ease-in-out infinite;
         }
       `}</style>
 
       {/* Carousel Container */}
       <div className="relative max-w-6xl mx-auto">
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows - Hidden on mobile, visible on md+ */}
         <button
           onClick={prevProject}
-          className="absolute left-4 top-1/2 z-20 w-12 h-12 flex items-center justify-center bg-background/80 rounded-full text-muted-foreground hover:text-foreground transition-colors animate-scale-pulse"
+          className="hidden md:flex absolute left-4 top-1/2 z-20 w-12 h-12 items-center justify-center bg-background/80 rounded-full text-muted-foreground hover:text-foreground transition-colors animate-scale-pulse"
           aria-label="Previous project"
         >
           <ChevronLeft className="w-7 h-7" />
@@ -147,7 +154,7 @@ const ProjectsSection = () => {
 
         <button
           onClick={nextProject}
-          className="absolute right-4 top-1/2 z-20 w-12 h-12 flex items-center justify-center bg-background/80 rounded-full text-muted-foreground hover:text-foreground transition-colors animate-scale-pulse"
+          className="hidden md:flex absolute right-4 top-1/2 z-20 w-12 h-12 items-center justify-center bg-background/80 rounded-full text-muted-foreground hover:text-foreground transition-colors animate-scale-pulse"
           aria-label="Next project"
         >
           <ChevronRight className="w-7 h-7" />
@@ -185,22 +192,43 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 mt-8">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToProject(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 border ${index === currentIndex
-                ? "bg-white border-white scale-110"
-                : "bg-transparent border-white/50 hover:border-white hover:bg-white/20"
-                }`}
-              aria-label={`Go to project ${index + 1}`}
-            />
-          ))}
+        {/* Navigation with Dots - Arrows inline on mobile */}
+        <div className="flex justify-center items-center gap-4 mt-8">
+          {/* Left Arrow - Only on mobile */}
+          <button
+            onClick={prevProject}
+            className="md:hidden w-10 h-10 flex items-center justify-center bg-background/80 rounded-full text-muted-foreground hover:text-foreground transition-colors animate-scale-pulse-inline"
+            aria-label="Previous project"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex gap-3">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToProject(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 border ${index === currentIndex
+                  ? "bg-white border-white scale-110"
+                  : "bg-transparent border-white/50 hover:border-white hover:bg-white/20"
+                  }`}
+                aria-label={`Go to project ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Right Arrow - Only on mobile */}
+          <button
+            onClick={nextProject}
+            className="md:hidden w-10 h-10 flex items-center justify-center bg-background/80 rounded-full text-muted-foreground hover:text-foreground transition-colors animate-scale-pulse-inline"
+            aria-label="Next project"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
