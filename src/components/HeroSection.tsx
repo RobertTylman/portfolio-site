@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowDown, FileText } from "lucide-react";
-import heroPhoto from "@/assets/headshot.jpeg";
+import heroPhoto from "@/assets/profilepic2.jpg";
 import backPhoto from "@/assets/done.jpg";
 import GameOfLife from "./GameOfLife";
 

@@ -40,13 +40,6 @@ const projects = [
     link: "https://github.com/TheUglyAlpaca/TuneBoy",
   },
   {
-    title: "Audio Plugin Suite",
-    description: "Developed a suite of DAW plugins (Synths, EQs, Filters) for professional audio production, implementing signal processing algorithms and intuitive user interfaces.",
-    tags: ["C++", "JUCE"],
-    images: [synthDemo],
-
-  },
-  {
     title: "Chrome Recorder",
     description: "A clean, lightweight Chrome extension that records and saves your browser's audio in real time. It lets users capture any sound from the browser for quick sampling, with an intuitive UI and multiple export options for seamless integration into creative or production workflows.",
     tags: ["Chrome Extensions Architecture", "lame.js", "React", "TypeScript", "Web Audio API"],
@@ -54,6 +47,13 @@ const projects = [
     link: "https://github.com/TheUglyAlpaca/Chrome-Record",
     imageFit: "cover" as const,
     webstoreLink: "https://chromewebstore.google.com/detail/chrome-recorder/bfmjmjjaiefmjalpplfjeiiicddojdpf",
+  },
+  {
+    title: "Audio Plugin Suite",
+    description: "Developed a suite of DAW plugins (Synths, EQs, Filters) for professional audio production, implementing signal processing algorithms and intuitive user interfaces.",
+    tags: ["C++", "JUCE"],
+    images: [synthDemo],
+
   },
   {
     title: "CampSorter",
