@@ -5,22 +5,29 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
           <div>
             <h2 className="text-2xl md:text-3xl leading-relaxed font-bold">
-              About
+              Who am I?
             </h2>
           </div>
 
-          <div className="space-y-6 text-muted-foreground leading-relaxed font-standard">
-            <p className="text-foreground text-lg">
-              I’m a Computer Engineer focused on software engineering and applied AI.
-              I build scalable, high-performance systems that solve complex problems and
-              improve real-world workflows, with an emphasis on clean architecture and
-              efficient algorithms.
-            </p>
-            <p className="text-muted-foreground text-lg">
-              With a strong foundation in computer science and experience in music technology,
-              I bring a structured, analytical approach while maintaining a creative perspective
-              in building impactful tools.
-            </p>
+          <div className="space-y-6 text-white leading-relaxed font-standard">
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>I'm a Computer Engineer specializing in software engineering and applied AI</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>I design and build scalable, high-performance systems</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>I have a strong grounding in algorithms, systems, and optimization</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>I bring a creative perspective shaped by music technology</span>
+              </li>
+            </ul>
 
 
           </div>

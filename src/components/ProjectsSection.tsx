@@ -36,7 +36,6 @@ const projects = [
     description: "A generative music sequencer and synthesizer designed for the MEAP board (ESP32). It combines procedural melody generation, smart chord progressions, and a rhythmic drum sequencer to create evolving 4-voice polyphonic music in real-time.",
     tags: ["Arduino", "C++", "ESP32", "Digital Signal Processing", "Embedded Systems"],
     images: [tuneboyAvif],
-    logo: tuneboyLogo,
     imageFit: "cover" as const,
     link: "https://github.com/TheUglyAlpaca/TuneBoy",
   },
@@ -61,7 +60,7 @@ const projects = [
     description: "Developed a full-stack logistical optimization tool to automate scheduling, assignments, and operations for large-scale summer programming. Improved administrative efficiency and reduced manual processing.",
     tags: ["HTML5 & CSS3", "JavaScript", "SQL"],
     images: [campSorterDemo2, campSorterDemo, campSorterDemo3],
-    link: "https://theuglyalpaca.github.io/CamperSort/",
+    link: "https://github.com/TheUglyAlpaca/CamperSort",
   },
   {
     title: "University Dashboards",

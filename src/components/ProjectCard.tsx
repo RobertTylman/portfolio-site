@@ -115,7 +115,8 @@ const ProjectCard = ({ title, description, tags, images, link, github, imageFit 
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-3">
             {logo && <img src={logo} alt={`${title} logo`} className="w-10 h-10 object-contain" />}
-            <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+            <h3 className={`font-bold text-foreground group-hover:text-primary transition-colors ${title === "Twist!" ? "font-fredoka text-3xl" : "text-lg"
+              }`}>
               {title}
             </h3>
           </div>
@@ -159,7 +160,7 @@ const ProjectCard = ({ title, description, tags, images, link, github, imageFit 
           </div>
         </div>
 
-        <p className="text-lg text-muted-foreground mb-6 leading-relaxed font-standard flex-1">
+        <p className="text-sm text-muted-foreground mb-6 leading-relaxed font-standard flex-1">
           {description}
         </p>
 

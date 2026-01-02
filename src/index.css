@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fredoka:wght@400;700&family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap');
 
 @layer base {
   :root {
@@ -49,6 +49,7 @@
     /* Typography */
     --font-pixel: 'Press Start 2P', 'Courier New', monospace;
     --font-standard: 'Inter', sans-serif;
+    --font-fredoka: 'Fredoka', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
     /* Transitions */
@@ -190,6 +191,10 @@
 
   .pixel-box {
     @apply pixel-border bg-card hover:bg-muted/50 transition-colors;
+  }
+
+  .font-fredoka {
+    font-family: var(--font-fredoka);
   }
 }
 
