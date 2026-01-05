@@ -115,7 +115,14 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-12 px-6 bg-secondary/30 overflow-hidden">
+    <section
+      id="projects"
+      className="py-12 px-6 bg-secondary/30 overflow-hidden"
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+      }}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-2xl md:text-3xl leading-relaxed font-bold">

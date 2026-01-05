@@ -12,6 +12,7 @@ interface Star {
     flickerSpeed: number;
     phase: number;
     color: string;
+    scrollSpeed: number;
 }
 
 interface ShootingStar {
@@ -52,7 +53,7 @@ const StarField: React.FC<StarFieldProps> = ({ isActive }) => {
     }, [isActive]);
 
     const initStars = (width: number, height: number) => {
-        const starCount = 150;
+        const starCount = 600;
         const stars: Star[] = [];
         const colors = [
             '255, 255, 255', // White
@@ -60,31 +61,45 @@ const StarField: React.FC<StarFieldProps> = ({ isActive }) => {
             '255, 253, 208', // Cream
             '230, 190, 255', // Soft Purple
             '255, 223, 186', // Soft Peach
+            '255, 182, 193', // Light Pink
+            '135, 206, 235', // Sky Blue
+            '255, 160, 122', // Light Salmon
+            '221, 160, 221', // Plum
+            '152, 251, 152', // Pale Green
         ];
         for (let i = 0; i < starCount; i++) {
+            // diverse depths: 
+            // deep background: slow speed, small size
+            // foreground: faster speed, larger size
+            const depth = Math.random();
+            const scrollSpeed = depth * 0.12 + 0.02; // Range: 0.02 - 0.14
+            const size = (depth * 1.5) + 0.5; // Range: 0.5 - 2.0
+
             stars.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                size: Math.random() * 1.5 + 0.5,
-                opacity: Math.random(),
+                size: size,
+                opacity: 0.5 + Math.random() * 0.5,
                 flickerSpeed: 0.001 + Math.random() * 0.002,
                 phase: Math.random() * Math.PI * 2,
                 color: colors[Math.floor(Math.random() * colors.length)],
+                scrollSpeed: scrollSpeed,
             });
         }
         starsRef.current = stars;
     };
 
-    const createShootingStar = (width: number, height: number) => {
+    const createShootingStar = (width: number, height: number, scrollOffset: number) => {
         return {
             x: Math.random() * width,
-            y: Math.random() * height * 0.5,
-            length: 50 + Math.random() * 100,
-            speed: 10 + Math.random() * 15,
+            y: Math.random() * height * 0.5 + scrollOffset,
+            length: 100 + Math.random() * 80,
+            speed: 25 + Math.random() * 20,
             opacity: 1,
             angle: Math.PI / 4 + (Math.random() - 0.5) * 0.2, // ~45 degrees
         };
     };
+
 
     const animate = (time: number) => {
         const canvas = canvasRef.current;
@@ -94,7 +109,12 @@ const StarField: React.FC<StarFieldProps> = ({ isActive }) => {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+
         const currentGlobalOpacity = globalOpacityRef.current;
+        const scrollY = window.scrollY;
+
+        // Shooting stars can exist in the "middle" ground
+        const shootingStarParallax = scrollY * 0.1;
 
         if (currentGlobalOpacity > 0) {
             // Draw Stars
@@ -102,22 +122,36 @@ const StarField: React.FC<StarFieldProps> = ({ isActive }) => {
                 const currentOpacity = (Math.sin(time * star.flickerSpeed + star.phase) + 1) / 2 * star.opacity * currentGlobalOpacity;
                 ctx.fillStyle = `rgba(${star.color}, ${currentOpacity})`;
                 ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+
+                // Apply individual parallax offset and wrap around
+                const parallaxOffset = scrollY * star.scrollSpeed;
+                let visualY = (star.y - parallaxOffset) % canvas.height;
+                if (visualY < 0) visualY += canvas.height;
+
+                ctx.arc(star.x, visualY, star.size, 0, Math.PI * 2);
                 ctx.fill();
             });
 
             // Draw Shooting Stars - Reduced frequency
             if (Math.random() < 0.001 && shootingStarsRef.current.length < 1) {
-                shootingStarsRef.current.push(createShootingStar(canvas.width, canvas.height));
+                shootingStarsRef.current.push(createShootingStar(canvas.width, canvas.height, shootingStarParallax));
             }
 
             shootingStarsRef.current = shootingStarsRef.current.filter((s) => s.opacity > 0);
             shootingStarsRef.current.forEach((s) => {
-                ctx.strokeStyle = `rgba(255, 255, 255, ${s.opacity * currentGlobalOpacity})`;
+                const startY = s.y - shootingStarParallax;
+                const endX = s.x + Math.cos(s.angle) * s.length;
+                const endY = (s.y + Math.sin(s.angle) * s.length) - shootingStarParallax;
+
+                const gradient = ctx.createLinearGradient(s.x, startY, endX, endY);
+                gradient.addColorStop(0, `rgba(255, 255, 255, 0)`);
+                gradient.addColorStop(1, `rgba(255, 255, 255, ${s.opacity * currentGlobalOpacity})`);
+
+                ctx.strokeStyle = gradient;
                 ctx.lineWidth = 2;
                 ctx.beginPath();
-                ctx.moveTo(s.x, s.y);
-                ctx.lineTo(s.x + Math.cos(s.angle) * s.length, s.y + Math.sin(s.angle) * s.length);
+                ctx.moveTo(s.x, startY);
+                ctx.lineTo(endX, endY);
                 ctx.stroke();
 
                 s.x += Math.cos(s.angle) * s.speed;
@@ -125,6 +159,7 @@ const StarField: React.FC<StarFieldProps> = ({ isActive }) => {
                 s.opacity -= 0.02;
             });
         }
+
 
         requestRef.current = requestAnimationFrame(animate);
     };

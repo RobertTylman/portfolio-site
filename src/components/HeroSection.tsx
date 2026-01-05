@@ -32,7 +32,7 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center px-6 relative">
-      <GameOfLife cellSize={20} updateInterval={150} opacity={0.08} />
+      <GameOfLife cellSize={20} updateInterval={250} opacity={0.10} />
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
