@@ -110,7 +110,7 @@ const HeroSection = () => {
 
         {/* Title - Cleaner, More Professional */}
         <h1 className="text-lg md:text-2xl lg:text-3xl mb-8 animate-fade-up delay-200 leading-tight font-semibold text-foreground whitespace-nowrap">
-          Computer Engineer & Musician
+          Computer Scientist, Engineer & Musician
         </h1>
 
         {/* Resume Button - Clean & Professional */}
