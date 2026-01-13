@@ -65,6 +65,7 @@ const projects = [
     tags: ["HTML5 & CSS3", "JavaScript", "SQL"],
     images: [campSorterDemo2, campSorterDemo, campSorterDemo3],
     link: "https://github.com/TheUglyAlpaca/CamperSort",
+    webstoreLink: "https://theuglyalpaca.github.io/CamperSort/",
   },
   {
     title: "University Dashboards",
