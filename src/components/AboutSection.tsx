@@ -9,28 +9,33 @@ const AboutSection = () => {
             </h2>
           </div>
 
-<div className="space-y-6 text-white leading-relaxed font-standard">
-  <ul className="space-y-4 text-lg">
-    <li className="flex items-start gap-4">
-      <span className="text-primary text-xl leading-none mt-1">•</span>
-      <span>I'm a Computer Engineer and applied AI / machine learning engineer.</span>
-    </li>
-    <li className="flex items-start gap-4">
-      <span className="text-primary text-xl leading-none mt-1">•</span>
-      <span>I develop models, software, and applications for real-world problems.</span>
-    </li>
-    <li className="flex items-start gap-4">
-      <span className="text-primary text-xl leading-none mt-1">•</span>
-      <span>I work across full-stack development, systems optimization, and forward-deployed engineering.</span>
-    </li>
-    <li className="flex items-start gap-4">
-      <span className="text-primary text-xl leading-none mt-1">•</span>
-      <span>I bring a unique skillset shaped by DSP, music technology, and signal processing.</span>
-    </li>
-  </ul>
-</div>
-
-
+          <div className="space-y-6 text-white leading-relaxed font-standard">
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>
+                  I'm a Computer Engineer and applied AI / machine learning engineer.
+                </span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>
+                  I develop models, software, and applications for real-world problems.
+                </span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>
+                  I work across full-stack development, systems optimization, and forward-deployed engineering.
+                </span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>
+                  I bring a unique skillset shaped by DSP, music technology, and signal processing.
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
