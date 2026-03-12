@@ -30,7 +30,7 @@ import uniDash3 from "@/assets/uni-dashboard-3.png";
 const projects = [
   {
     title: "Twist!",
-    description: "Built a production-ready multiplayer party game that transforms players’ camera rolls into AI-generated challenges, featuring real-time image uploads, transformation pipelines, voting, and a responsive UI.",
+    description: "Built and published a multiplayer party game that transforms players’ camera rolls into AI-generated challenges, featuring real-time image uploads, transformation pipelines, voting, and a responsive UI.",
     tags: ["Expo", "Express", "Gemini 3.0 API", "Node.js", "React.js", "Redis", "Socket.io"],
     images: [twistImg1, twistImg2, twistImg3, twistImg4, twistImg5, twistImg6, twistImg7, twistImg8, twistImg9],
     link: "https://twistpartygame.com/",
