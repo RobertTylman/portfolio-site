@@ -1,5 +1,17 @@
 import { useState, useEffect } from "react";
-import { Linkedin, Github, Twitter, Instagram } from "lucide-react";
+import { Linkedin, Github, Instagram } from "lucide-react";
+
+// Custom X (Twitter) Icon
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 // Custom Spotify Icon since Lucide doesn't have it
 // Custom Spotify Icon - Inverted (Outline with filled waves)
@@ -35,7 +47,7 @@ const Navigation = () => {
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/robert-tylman-8a0410223/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/RobertTylman", label: "GitHub" },
-    { icon: Twitter, href: "https://x.com/Robert_Tylman", label: "X" },
+    { icon: XIcon, href: "https://x.com/Robert_Tylman", label: "X" },
     { icon: Instagram, href: "https://www.instagram.com/tilly_plays_keys/", label: "Instagram" },
     { icon: SpotifyIcon, href: "https://open.spotify.com/artist/7ogGgg364w3zuu04ZAB7xt?si=ixQWATC2T-eBay-5ZvJ15w", label: "Spotify" },
   ];
