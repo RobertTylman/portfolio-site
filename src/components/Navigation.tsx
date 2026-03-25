@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Github, Twitter, Instagram } from "lucide-react";
 
 // Custom Spotify Icon since Lucide doesn't have it
 // Custom Spotify Icon - Inverted (Outline with filled waves)
@@ -35,6 +35,7 @@ const Navigation = () => {
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/robert-tylman-8a0410223/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/RobertTylman", label: "GitHub" },
+    { icon: Twitter, href: "https://x.com/Robert_Tylman", label: "X" },
     { icon: Instagram, href: "https://www.instagram.com/tilly_plays_keys/", label: "Instagram" },
     { icon: SpotifyIcon, href: "https://open.spotify.com/artist/7ogGgg364w3zuu04ZAB7xt?si=ixQWATC2T-eBay-5ZvJ15w", label: "Spotify" },
   ];
