@@ -28,9 +28,21 @@ interface ProjectCardProps {
   imageFit?: "cover" | "contain";
   logo?: string;
   webstoreLink?: string;
+  titleClassName?: string;
 }
 
-const ProjectCard = ({ title, description, tags, images, link, github, imageFit = "contain", logo, webstoreLink }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  description,
+  tags,
+  images,
+  link,
+  github,
+  imageFit = "contain",
+  logo,
+  webstoreLink,
+  titleClassName,
+}: ProjectCardProps) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   // Auto-play the carousel if there are multiple images
@@ -115,8 +127,16 @@ const ProjectCard = ({ title, description, tags, images, link, github, imageFit 
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-3">
             {logo && <img src={logo} alt={`${title} logo`} className="w-10 h-10 object-contain" />}
-            <h3 className={`font-bold text-foreground group-hover:text-primary transition-colors ${title === "Twist!" ? "font-fredoka text-3xl" : title === "TuneBoy" ? "font-gameboy text-xl" : "text-lg"
-              }`}>
+            <h3
+              className={`font-bold text-foreground group-hover:text-primary transition-colors ${
+                titleClassName ??
+                (title === "Twist!"
+                  ? "font-fredoka text-3xl"
+                  : title === "TuneBoy"
+                    ? "font-gameboy text-xl"
+                    : "text-lg")
+              }`}
+            >
               {title}
             </h3>
           </div>

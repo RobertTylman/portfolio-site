@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fredoka:wght@400;700&family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&family=Russo+One&display=swap');
 
 @font-face {
   font-family: 'Early GameBoy';
@@ -60,6 +60,8 @@
     --font-fredoka: 'Fredoka', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     --font-gameboy: 'Early GameBoy', monospace;
+    --font-microgramma: 'Russo One', 'Eurostile Extended', 'Bank Gothic', sans-serif;
+    --font-helvetica: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
     /* Transitions */
     --transition-smooth: all 0.2s ease-out;
@@ -211,6 +213,20 @@
   .font-gameboy {
     font-family: var(--font-gameboy);
     letter-spacing: -0.1em;
+  }
+
+  .font-microgramma {
+    font-family: var(--font-microgramma);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-shadow: 0.03em 0 0 currentColor, -0.03em 0 0 currentColor;
+  }
+
+  .font-helvetica-bold {
+    font-family: var(--font-helvetica);
+    font-weight: 700;
+    letter-spacing: 0.01em;
   }
 }
 

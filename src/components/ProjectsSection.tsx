@@ -20,6 +20,7 @@ import crImg3 from "@/assets/chrome-recorder-3.jpg";
 import crImg4 from "@/assets/chrome-recorder-4.jpg";
 import crImg5 from "@/assets/chrome-recorder-5.jpg";
 import synthDemo from "@/assets/synth-demo.png";
+import tillySynthImage from "@/assets/TlilySynth.png";
 import campSorterDemo from "@/assets/campsorter-demo.png";
 import campSorterDemo2 from "@/assets/campsorter-demo-2.png";
 import campSorterDemo3 from "@/assets/campsorter-demo-3.png";
@@ -44,6 +45,15 @@ const projects = [
     link: "https://github.com/RobertTylman/TuneBoy",
   },
   {
+    title: "TillySynth",
+    description: "An open-source, polyphonic, subtractive synth plugin inspired by the Roland Juno-60, built in JUCE with a CPU-temperature-driven analogue drift engine, dual oscillators, vintage chorus, expressive modulation, and 200+ custom presets.",
+    tags: ["C++17", "CMake", "DSP", "JUCE 8", "Plugin Development", "Synth Design"],
+    images: [tillySynthImage],
+    link: "https://github.com/RobertTylman/TillySynth",
+    imageFit: "cover" as const,
+    titleClassName: "font-microgramma text-[1.35rem] tracking-[0.06em]",
+  },
+  {
     title: "Chrome Recorder",
     description: "A clean, lightweight Chrome extension that records and saves your browser's audio in real time. It lets users capture any sound from the browser for quick sampling, with an intuitive UI and multiple export options for seamless integration into creative or production workflows.",
     tags: ["Chrome Extensions Architecture", "lame.js", "React", "TypeScript", "Web Audio API"],
@@ -54,7 +64,7 @@ const projects = [
   },
   {
     title: "Audio Plugin Suite",
-    description: "Developed a suite of DAW plugins (Synths, EQs, Filters) for professional audio production, implementing signal processing algorithms and intuitive user interfaces.",
+    description: "Developed a suite of basic essential DAW plugins (Synths, EQs, Filters) for professional audio production, implementing signal processing algorithms and intuitive user interfaces.",
     tags: ["C++", "JUCE"],
     images: [synthDemo],
 
