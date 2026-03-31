@@ -52,6 +52,7 @@ const projects = [
     link: "https://github.com/RobertTylman/TillySynth",
     imageFit: "cover" as const,
     titleClassName: "font-microgramma text-[1.35rem] tracking-[0.06em]",
+    titleSuffix: "(working title)",
   },
   {
     title: "Chrome Recorder",

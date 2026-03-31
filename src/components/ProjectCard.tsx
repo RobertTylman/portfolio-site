@@ -29,6 +29,7 @@ interface ProjectCardProps {
   logo?: string;
   webstoreLink?: string;
   titleClassName?: string;
+  titleSuffix?: string;
 }
 
 const ProjectCard = ({
@@ -42,6 +43,7 @@ const ProjectCard = ({
   logo,
   webstoreLink,
   titleClassName,
+  titleSuffix,
 }: ProjectCardProps) => {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -127,18 +129,25 @@ const ProjectCard = ({
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-3">
             {logo && <img src={logo} alt={`${title} logo`} className="w-10 h-10 object-contain" />}
-            <h3
-              className={`font-bold text-foreground group-hover:text-primary transition-colors ${
-                titleClassName ??
-                (title === "Twist!"
-                  ? "font-fredoka text-3xl"
-                  : title === "TuneBoy"
-                    ? "font-gameboy text-xl"
-                    : "text-lg")
-              }`}
-            >
-              {title}
-            </h3>
+            <div className="flex flex-wrap items-baseline gap-2">
+              <h3
+                className={`font-bold text-foreground group-hover:text-primary transition-colors ${
+                  titleClassName ??
+                  (title === "Twist!"
+                    ? "font-fredoka text-3xl"
+                    : title === "TuneBoy"
+                      ? "font-gameboy text-xl"
+                      : "text-lg")
+                }`}
+              >
+                {title}
+              </h3>
+              {titleSuffix && (
+                <span className="font-standard text-sm font-normal text-muted-foreground">
+                  {titleSuffix}
+                </span>
+              )}
+            </div>
           </div>
           <div className="flex gap-3">
             {github && (
