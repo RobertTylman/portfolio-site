@@ -20,7 +20,11 @@ import crImg3 from "@/assets/chrome-recorder-3.jpg";
 import crImg4 from "@/assets/chrome-recorder-4.jpg";
 import crImg5 from "@/assets/chrome-recorder-5.jpg";
 import synthDemo from "@/assets/synth-demo.png";
-import tillySynthImage from "@/assets/TlilySynth.png";
+import tillysynth1 from "@/assets/tillysynth-1.png";
+import tillysynth2 from "@/assets/tillysynth-2.png";
+import tillysynth3 from "@/assets/tillysynth-3.png";
+import tillysynth4 from "@/assets/tillysynth-4.png";
+import tillysynth5 from "@/assets/tillysynth-5.png";
 import campSorterDemo from "@/assets/campsorter-demo.png";
 import campSorterDemo2 from "@/assets/campsorter-demo-2.png";
 import campSorterDemo3 from "@/assets/campsorter-demo-3.png";
@@ -48,7 +52,7 @@ const projects = [
     title: "TillySynth",
     description: "An open-source, polyphonic, subtractive synth plugin inspired by the Roland Juno-60, built in JUCE with a CPU-temperature-driven analogue drift engine, dual oscillators, vintage chorus, expressive modulation, and 200+ custom presets.",
     tags: ["C++17", "CMake", "DSP", "JUCE 8", "Plugin Development", "Synth Design"],
-    images: [tillySynthImage],
+    images: [tillysynth1, tillysynth2, tillysynth3, tillysynth4, tillysynth5],
     link: "https://github.com/RobertTylman/TillySynth",
     imageFit: "cover" as const,
     titleClassName: "font-microgramma text-[1.35rem] tracking-[0.06em]",
