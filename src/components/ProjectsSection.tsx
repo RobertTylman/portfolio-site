@@ -31,6 +31,12 @@ import campSorterDemo3 from "@/assets/campsorter-demo-3.png";
 import uniDash1 from "@/assets/uni-dashboard-1.png";
 import uniDash2 from "@/assets/uni-dashboard-2.png";
 import uniDash3 from "@/assets/uni-dashboard-3.png";
+import shazam1 from "@/assets/shazam-1.png";
+import shazam2 from "@/assets/shazam-2.png";
+import shazam3 from "@/assets/shazam-3.png";
+import shazam4 from "@/assets/shazam-4.png";
+import shazam5 from "@/assets/shazam-5.png";
+
 
 const projects = [
   {
@@ -57,6 +63,14 @@ const projects = [
     imageFit: "cover" as const,
     titleClassName: "font-microgramma text-[1.35rem] tracking-[0.06em]",
     titleSuffix: "(working title)",
+  },
+  {
+    title: "Shazam Remake",
+    description: "A recreation of the Shazam music recognition algorithm. Features acoustic fingerprinting, constellation peak extraction, and time-coherence scoring for robust audio identification across millions of hashes.",
+    tags: ["Python", "FastAPI", "SQLite", "DSP", "Hashing", "Web Audio API"],
+    images: [shazam1, shazam2, shazam3, shazam4, shazam5],
+    link: "https://github.com/RobertTylman/Shazam-Remake",
+    imageFit: "cover" as const,
   },
   {
     title: "Chrome Recorder",
