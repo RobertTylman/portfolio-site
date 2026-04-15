@@ -11,7 +11,7 @@ import twistImg6 from "@/assets/Twist-Game-Flow-6.png";
 import twistImg7 from "@/assets/Twist-Game-Flow-7.png";
 import twistImg8 from "@/assets/Twist-Game-Flow-8.png";
 import twistImg9 from "@/assets/Twist-Game-Flow-9.png";
-import tuneboyScreenshot from "@/assets/tuneboy-screenshot.png";
+import mcpimage from "@/assets/mcpimage.png";
 import tuneboyLogo from "@/assets/tuneboy_logo.png";
 import tuneboyAvif from "@/assets/tuneboy.avif";
 import crImg1 from "@/assets/chrome-recorder-1.jpg";
@@ -45,6 +45,14 @@ const projects = [
     tags: ["Expo", "Express", "Gemini 3.0 API", "Node.js", "React.js", "Redis", "Socket.io"],
     images: [twistImg1, twistImg2, twistImg3, twistImg4, twistImg5, twistImg6, twistImg7, twistImg8, twistImg9],
     link: "https://twistpartygame.com/",
+  },
+  {
+    title: "Ableton Live MCP Server",
+    description: "Ableton MCP Extended is a robust MCP server that lets AI assistants like Claude and Cursor control Ableton Live using natural language. It supports deep session, track, clip, note, device, browser, automation, and voice-generation workflows for fast, creative music production.",
+    tags: ["Python 3.10+", "Ableton Live 11+", "MCP", "Claude/Cursor", "ElevenLabs MCP"],
+    images: [mcpimage],
+    link: "https://github.com/uisato/ableton-mcp-extended",
+    webstoreLink: "https://www.youtube.com/watch?v=7ZKPIrJuuKk",
   },
   {
     title: "TuneBoy",
