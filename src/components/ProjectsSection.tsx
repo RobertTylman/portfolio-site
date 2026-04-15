@@ -48,7 +48,7 @@ const projects = [
   },
   {
     title: "Ableton Live MCP Server",
-    description: "Ableton MCP Extended is a robust MCP server that lets AI assistants like Claude and Cursor control Ableton Live using natural language. It supports deep session, track, clip, note, device, browser, automation, and voice-generation workflows for fast, creative music production.",
+    description: "A robust MCP server that lets AI assistants like Claude and Cursor control Ableton Live using natural language. It supports deep session, track, clip, note, device, browser, automation, and voice-generation workflows for fast, creative music production.",
     tags: ["Python 3.10+", "Ableton Live 11+", "MCP", "Claude/Cursor", "ElevenLabs MCP"],
     images: [mcpimage],
     link: "https://github.com/uisato/ableton-mcp-extended",
