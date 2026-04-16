@@ -28,6 +28,7 @@ interface ProjectCardProps {
   imageFit?: "cover" | "contain";
   logo?: string;
   webstoreLink?: string;
+  webstoreLinkLabel?: string;
   titleClassName?: string;
   titleSuffix?: string;
 }
@@ -42,6 +43,7 @@ const ProjectCard = ({
   imageFit = "contain",
   logo,
   webstoreLink,
+  webstoreLinkLabel,
   titleClassName,
   titleSuffix,
 }: ProjectCardProps) => {
@@ -181,7 +183,7 @@ const ProjectCard = ({
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center"
-                aria-label="View on Chrome Web Store"
+                aria-label={webstoreLinkLabel ?? "View external link"}
               >
                 <WebsiteIcon className="w-5 h-5 p-[1px]" />
               </a>

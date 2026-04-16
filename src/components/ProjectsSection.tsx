@@ -38,6 +38,8 @@ import shazam4 from "@/assets/shazam-4.png";
 import shazam5 from "@/assets/shazam-5.png";
 
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const projects = [
   {
     title: "Twist!",
@@ -53,6 +55,7 @@ const projects = [
     images: [mcpimage],
     link: "https://github.com/uisato/ableton-mcp-extended",
     webstoreLink: "https://www.youtube.com/watch?v=7ZKPIrJuuKk",
+    webstoreLinkLabel: "Watch demo",
   },
   {
     title: "TuneBoy",
@@ -68,6 +71,8 @@ const projects = [
     tags: ["C++17", "CMake", "DSP", "JUCE 8", "Plugin Development", "Synth Design"],
     images: [tillysynth1, tillysynth2, tillysynth3, tillysynth4, tillysynth5],
     link: "https://github.com/RobertTylman/TillySynth",
+    webstoreLink: `${BASE_URL}tillysynth-chorus/index.html`,
+    webstoreLinkLabel: "Read chorus article",
     imageFit: "cover" as const,
     titleClassName: "font-microgramma text-[1.35rem] tracking-[0.06em]",
     titleSuffix: "(working title)",
@@ -88,6 +93,7 @@ const projects = [
     link: "https://github.com/RobertTylman/Chrome-Record",
     imageFit: "cover" as const,
     webstoreLink: "https://chromewebstore.google.com/detail/chrome-recorder/bfmjmjjaiefmjalpplfjeiiicddojdpf",
+    webstoreLinkLabel: "View on Chrome Web Store",
   },
   {
     title: "Audio Plugin Suite",
@@ -103,6 +109,7 @@ const projects = [
     images: [campSorterDemo2, campSorterDemo, campSorterDemo3],
     link: "https://github.com/RobertTylman/CamperSort",
     webstoreLink: "https://roberttylman.github.io/CamperSort/",
+    webstoreLinkLabel: "Visit live site",
   },
   {
     title: "University Dashboards",
@@ -111,6 +118,7 @@ const projects = [
     images: [uniDash1, uniDash2, uniDash3],
     link: "https://github.com/RobertTylman/NYUDashboard",
     webstoreLink: "https://chromewebstore.google.com/detail/vanderbilt-dashboard/bbbjeogjpjcflkbnjkpfjgcibcccjjpd",
+    webstoreLinkLabel: "View on Chrome Web Store",
   },
 ];
 
