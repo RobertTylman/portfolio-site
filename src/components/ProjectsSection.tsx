@@ -36,6 +36,12 @@ import shazam2 from "@/assets/shazam-2.png";
 import shazam3 from "@/assets/shazam-3.png";
 import shazam4 from "@/assets/shazam-4.png";
 import shazam5 from "@/assets/shazam-5.png";
+import tavilyScreenshot from "@/assets/tavily-screenshot.png";
+import tavily1 from "@/assets/tavily-1.png";
+import tavily2 from "@/assets/tavily-2.png";
+import tavily3 from "@/assets/tavily-3.png";
+import tavily4 from "@/assets/tavily-4.png";
+import tavily5 from "@/assets/tavily-5.png";
 
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -56,6 +62,13 @@ const projects = [
     link: "https://github.com/uisato/ableton-mcp-extended",
     webstoreLink: "https://www.youtube.com/watch?v=7ZKPIrJuuKk",
     webstoreLinkLabel: "Watch demo",
+  },
+  {
+    title: "Tavily Research Extension",
+    description: "A lightweight Chrome extension designed for automated research and article fact-checking. It utilizes Tavily's /extract and /research APIs to enable seamless claim verification and site analysis, complete with inline source annotations.",
+    tags: ["React", "TypeScript", "Tavily API", "Chrome Extensions Architecture", "LLMs"],
+    images: [tavily2, tavily1, tavily3, tavilyScreenshot, tavily4, tavily5],
+    imageFit: "cover" as const,
   },
   {
     title: "TuneBoy",
@@ -122,23 +135,33 @@ const projects = [
   },
 ];
 
-const CARD_WIDTH = 384; // w-96
+const CARD_WIDTH = 518; // approx 35% larger than 384 (w-96)
 const GAP = 24;
 
 const ProjectsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const lastNavTime = useRef<number>(0);
 
   const nextProject = () => {
+    const now = Date.now();
+    if (now - lastNavTime.current < 500) return;
+    lastNavTime.current = now;
     setCurrentIndex((prev) => (prev + 1) % projects.length);
   };
 
   const prevProject = () => {
+    const now = Date.now();
+    if (now - lastNavTime.current < 500) return;
+    lastNavTime.current = now;
     setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
   const goToProject = (index: number) => {
+    const now = Date.now();
+    if (now - lastNavTime.current < 500) return;
+    lastNavTime.current = now;
     setCurrentIndex(index);
   };
 
@@ -236,11 +259,12 @@ const ProjectsSection = () => {
               return (
                 <div
                   key={project.title}
-                  className={`flex-shrink-0 w-96 transition-all duration-500 cursor-pointer ${isActive
+                  className={`flex-shrink-0 w-[518px] transition-all duration-500 cursor-pointer will-change-transform ${isActive
                     ? "opacity-100 scale-100"
                     : "opacity-50 scale-95"
                     }`}
                   onClick={() => goToProject(index)}
+                  style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
                 >
                   <ProjectCard {...project} />
                 </div>

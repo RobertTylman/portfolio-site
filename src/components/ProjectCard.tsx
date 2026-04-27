@@ -191,7 +191,7 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <p className="text-sm text-muted-foreground mb-6 leading-relaxed font-standard flex-1">
+        <p className="text-[15px] text-muted-foreground mb-6 leading-relaxed font-standard flex-1">
           {description}
         </p>
 
