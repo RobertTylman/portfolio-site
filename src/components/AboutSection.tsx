@@ -14,7 +14,7 @@ const AboutSection = () => {
               <li className="flex items-start gap-4">
                 <span className="text-primary text-xl leading-none mt-1">•</span>
                 <span>
-                  I'm a Computer Engineer and applied AI / machine learning engineer.
+                  I’m a Computer Engineer and Applied AI/Machine Learning Engineer.
                 </span>
               </li>
               <li className="flex items-start gap-4">
