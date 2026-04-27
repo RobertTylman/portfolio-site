@@ -32,7 +32,7 @@ const AboutSection = () => {
               <li className="flex items-start gap-4">
                 <span className="text-primary text-xl leading-none mt-1">•</span>
                 <span>
-                  I bring a unique skillset shaped by DSP, music technology, and signal processing.
+                  I bring a unique skillset shaped by Music Information Retrieval (MIR), signal processing, and music tech.
                 </span>
               </li>
             </ul>
