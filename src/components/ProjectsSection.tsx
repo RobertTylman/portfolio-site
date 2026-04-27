@@ -19,7 +19,6 @@ import crImg2 from "@/assets/chrome-recorder-2.jpg";
 import crImg3 from "@/assets/chrome-recorder-3.jpg";
 import crImg4 from "@/assets/chrome-recorder-4.jpg";
 import crImg5 from "@/assets/chrome-recorder-5.jpg";
-import synthDemo from "@/assets/synth-demo.png";
 import tillysynth1 from "@/assets/tillysynth-1.png";
 import tillysynth2 from "@/assets/tillysynth-2.png";
 import tillysynth3 from "@/assets/tillysynth-3.png";
@@ -68,6 +67,7 @@ const projects = [
     description: "A lightweight Chrome extension designed for automated research and article fact-checking. It utilizes Tavily's /extract and /research APIs to enable seamless claim verification and site analysis, complete with inline source annotations.",
     tags: ["React", "TypeScript", "Tavily API", "Chrome Extensions Architecture", "LLMs"],
     images: [tavily2, tavily1, tavily3, tavilyScreenshot, tavily4, tavily5],
+    link: "https://github.com/RobertTylman/Tavily-Research-Extension",
     imageFit: "cover" as const,
   },
   {
@@ -107,13 +107,6 @@ const projects = [
     imageFit: "cover" as const,
     webstoreLink: "https://chromewebstore.google.com/detail/chrome-recorder/bfmjmjjaiefmjalpplfjeiiicddojdpf",
     webstoreLinkLabel: "View on Chrome Web Store",
-  },
-  {
-    title: "Audio Plugin Suite",
-    description: "Developed a suite of basic essential DAW plugins (Synths, EQs, Filters) for professional audio production, implementing signal processing algorithms and intuitive user interfaces.",
-    tags: ["C++", "JUCE"],
-    images: [synthDemo],
-
   },
   {
     title: "CampSorter",
