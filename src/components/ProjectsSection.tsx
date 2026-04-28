@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import twistIcon from "@/assets/twist-icon.png";
@@ -128,14 +128,26 @@ const projects = [
   },
 ];
 
-const CARD_WIDTH = 518; // approx 35% larger than 384 (w-96)
 const GAP = 24;
 
 const ProjectsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardWidth, setCardWidth] = useState(518);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   const lastNavTime = useRef<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // 518px max width, but constrained to viewport on smaller screens (minus some padding)
+      const maxMobileWidth = window.innerWidth - 32;
+      setCardWidth(Math.min(518, maxMobileWidth));
+    };
+
+    handleResize(); // Initial measurement
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const nextProject = () => {
     const now = Date.now();
@@ -177,7 +189,7 @@ const ProjectsSection = () => {
 
   // Calculate translateX to center current card
   const getTranslateX = () => {
-    return -(currentIndex * (CARD_WIDTH + GAP));
+    return -(currentIndex * (cardWidth + GAP));
   };
 
   return (
@@ -243,7 +255,7 @@ const ProjectsSection = () => {
           <div
             className="flex gap-6 transition-transform duration-500 ease-out"
             style={{
-              transform: `translateX(calc(50% - ${CARD_WIDTH / 2}px + ${getTranslateX()}px))`,
+              transform: `translateX(calc(50% - ${cardWidth / 2}px + ${getTranslateX()}px))`,
             }}
           >
             {projects.map((project, index) => {
@@ -252,12 +264,12 @@ const ProjectsSection = () => {
               return (
                 <div
                   key={project.title}
-                  className={`flex-shrink-0 w-[518px] transition-all duration-500 cursor-pointer will-change-transform ${isActive
+                  className={`flex-shrink-0 transition-all duration-500 cursor-pointer will-change-transform ${isActive
                     ? "opacity-100 scale-100"
                     : "opacity-50 scale-95"
                     }`}
                   onClick={() => goToProject(index)}
-                  style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
+                  style={{ width: `${cardWidth}px`, transform: "translateZ(0)", backfaceVisibility: "hidden" }}
                 >
                   <ProjectCard {...project} />
                 </div>
