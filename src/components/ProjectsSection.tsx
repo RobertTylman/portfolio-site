@@ -66,7 +66,7 @@ const projects = [
     title: "Tavily Research Extension",
     description: "A lightweight Chrome extension designed for automated research and article fact-checking. It utilizes Tavily's /extract and /research APIs to enable seamless claim verification and site analysis, complete with inline source annotations.",
     tags: ["React", "TypeScript", "Tavily API", "Chrome Extensions Architecture", "LLMs"],
-    images: [tavily2, tavily1, tavily3, tavilyScreenshot, tavily4, tavily5],
+    images: [tavily1, tavily5, tavily4, tavilyScreenshot, tavily3, tavily2],
     link: "https://github.com/RobertTylman/Tavily-Research-Extension",
     imageFit: "cover" as const,
   },
