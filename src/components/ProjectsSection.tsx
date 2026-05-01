@@ -74,15 +74,9 @@ const projects = [
     tags: ["React", "TypeScript", "Tavily API", "Chrome Extensions Architecture", "LLMs"],
     images: [tavily1, tavily5, tavily4, tavilyScreenshot, tavily3, tavily2],
     github: "https://github.com/RobertTylman/Tavily-Research-Extension",
+    webstoreLink: "https://chromewebstore.google.com/detail/research-assistant/hjadgacmfondhchpdfhgdpfjiapdfege",
+    webstoreLinkLabel: "View on Chrome Web Store",
     imageFit: "cover" as const,
-  },
-  {
-    title: "TuneBoy",
-    description: "A generative music sequencer and synthesizer designed for the MEAP board (ESP32). It combines procedural melody generation, smart chord progressions, and a rhythmic drum sequencer to create evolving 4-voice polyphonic music in real-time.",
-    tags: ["Arduino", "C++", "ESP32", "Digital Signal Processing", "Embedded Systems"],
-    images: [tuneboyAvif],
-    imageFit: "cover" as const,
-    github: "https://github.com/RobertTylman/TuneBoy",
   },
   {
     title: "TillySynth",
@@ -95,6 +89,14 @@ const projects = [
     imageFit: "cover" as const,
     titleClassName: "font-microgramma text-[1.35rem] tracking-[0.06em]",
     titleSuffix: "(working title)",
+  },
+  {
+    title: "TuneBoy",
+    description: "A generative music sequencer and synthesizer designed for the MEAP board (ESP32). It combines procedural melody generation, smart chord progressions, and a rhythmic drum sequencer to create evolving 4-voice polyphonic music in real-time.",
+    tags: ["Arduino", "C++", "ESP32", "Digital Signal Processing", "Embedded Systems"],
+    images: [tuneboyAvif],
+    imageFit: "cover" as const,
+    github: "https://github.com/RobertTylman/TuneBoy",
   },
   {
     title: "Shazam Remake",
