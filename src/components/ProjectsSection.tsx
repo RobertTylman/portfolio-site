@@ -41,6 +41,10 @@ import tavily2 from "@/assets/tavily-2.png";
 import tavily3 from "@/assets/tavily-3.png";
 import tavily4 from "@/assets/tavily-4.png";
 import tavily5 from "@/assets/tavily-5.png";
+import jazzBeatTracking from "@/assets/jazz-beat-tracking.png";
+import jazzBeatTrackingBands from "@/assets/jazz-beat-tracking-bands.png";
+import jazzBeatTrackingDistributions from "@/assets/jazz-beat-tracking-distributions.png";
+import jazzBeatTrackingDecades from "@/assets/jazz-beat-tracking-decades.png";
 
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -76,6 +80,14 @@ const projects = [
     github: "https://github.com/RobertTylman/Tavily-Research-Extension",
     webstoreLink: "https://chromewebstore.google.com/detail/research-assistant/hjadgacmfondhchpdfhgdpfjiapdfege",
     webstoreLinkLabel: "View on Chrome Web Store",
+    imageFit: "cover" as const,
+  },
+  {
+    title: "Jazz Beattracking Evaluation and Finetuning",
+    description: "Benchmarked beat and downbeat tracking models on the Jazz Trio Database, then built a Beat This!-compatible training pipeline to fine-tune and re-evaluate trackers on jazz performances with swing feel, rubato, brushed drums, and tempo modulation.",
+    tags: ["Python", "PyTorch Lightning", "MIR", "Beat Tracking", "Jazz Trio Database", "Fine-tuning"],
+    images: [jazzBeatTracking, jazzBeatTrackingBands, jazzBeatTrackingDistributions, jazzBeatTrackingDecades],
+    github: "https://github.com/RobertTylman/MIR-Jazz-Beat-Tracking",
     imageFit: "cover" as const,
   },
   {
