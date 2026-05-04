@@ -69,13 +69,13 @@ const projects = [
     paperLinkLabel: "Read paper",
   },
   {
-    title: "Tavily Research Extension",
+    title: "RAG Research Extension",
     description: (
       <>
-        A lightweight Chrome extension designed for automated research and article fact-checking. It utilizes Tavily's <i>/extract</i> and <i>/research</i> APIs to enable seamless claim verification and site analysis, complete with inline source annotations.
+        A lightweight Chrome extension designed for automated research and article fact-checking. It utilizes Tavily's <i>/extract</i> and <i>/research</i> APIs to enable seamless claim verification and site analysis, complete with inline source annotations. Also includes a thorough evaluation of other research APIs using Ragas.
       </>
     ),
-    tags: ["React", "TypeScript", "Tavily API", "Chrome Extensions Architecture", "LLMs"],
+    tags: ["React", "TypeScript", "Tavily API", "Chrome Extensions Architecture", "Ragas"],
     images: [tavily1, tavily5, tavily4, tavilyScreenshot, tavily3, tavily2],
     github: "https://github.com/RobertTylman/Tavily-Research-Extension",
     webstoreLink: "https://chromewebstore.google.com/detail/research-assistant/hjadgacmfondhchpdfhgdpfjiapdfege",
