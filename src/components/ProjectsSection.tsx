@@ -89,6 +89,8 @@ const projects = [
     tags: ["Python", "PyTorch Lightning", "MIR", "Beat Tracking", "Jazz Trio Database", "Fine-tuning"],
     images: [jazzBeatTracking, jazzBeatTrackingSplitComparison, jazzBeatTrackingBands, jazzBeatTrackingDistributions, jazzBeatTrackingDecades],
     github: "https://github.com/RobertTylman/MIR-Jazz-Beat-Tracking",
+    paperLink: `${BASE_URL}Learning%20the%20Groove-%20Fine-Tuning%20Beat%20Tracking%20on%20the%20Jazz%20Trio%20Dataset.pdf`,
+    paperLinkLabel: "Read paper",
     imageFit: "cover" as const,
   },
   {
