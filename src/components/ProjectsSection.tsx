@@ -46,6 +46,9 @@ import jazzBeatTrackingBands from "@/assets/jazz-beat-tracking-bands.png";
 import jazzBeatTrackingDistributions from "@/assets/jazz-beat-tracking-distributions.png";
 import jazzBeatTrackingDecades from "@/assets/jazz-beat-tracking-decades.png";
 import jazzBeatTrackingSplitComparison from "@/assets/jazz-beat-tracking-split-comparison.png";
+import audioCaptioningPipeline from "@/assets/audio-captioning-pipeline.png";
+import audioCaptioningLearnedResampling from "@/assets/audio-captioning-learned-resampling.png";
+import audioCaptioningReranking from "@/assets/audio-captioning-reranking.png";
 
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -81,6 +84,14 @@ const projects = [
     github: "https://github.com/RobertTylman/Tavily-Research-Extension",
     webstoreLink: "https://chromewebstore.google.com/detail/research-assistant/hjadgacmfondhchpdfhgdpfjiapdfege",
     webstoreLinkLabel: "View on Chrome Web Store",
+    imageFit: "cover" as const,
+  },
+  {
+    title: "Automatic Audio Captioning",
+    description: "An automated audio captioning system that turns audio clips into fluent natural-language descriptions of the sound events, their relationships, and the broader acoustic scene. Built on Clotho v2 with a PyTorch Lightning pipeline that combines BEATs with optional ConvNeXt and AST encoders, configurable fusion strategies, a Conformer post-encoder, BART caption decoding, and FENSE plus standard DCASE evaluation metrics.",
+    tags: ["Python", "PyTorch Lightning", "BEATs", "AST", "ConvNeXt", "BART", "Audio Captioning", "Multimodal ML"],
+    images: [audioCaptioningPipeline, audioCaptioningLearnedResampling, audioCaptioningReranking],
+    github: "https://github.com/RobertTylman/Automatic-Audio-Captioning-ML-2026",
     imageFit: "cover" as const,
   },
   {
