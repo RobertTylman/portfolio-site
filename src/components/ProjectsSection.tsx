@@ -88,7 +88,7 @@ const projects = [
   },
   {
     title: "Automatic Audio Captioning",
-    description: "A multi-encoder audio captioning system that generates natural-language descriptions from raw audio. The PyTorch Lightning pipeline combines 3 encoders: BEATs, ConvNeXt, AST, with configurable fusions, a Conformer post-encoder, and BART decoding. An extended reranking stage samples multiple candidate captions using Nucleus Sampling, ranks them using CLAP-based audio-text similarity, and refines the strongest outputs with GPT. Evaluated with FENSE and standard DCASE metrics. Achieves comparable performance to SOTA with 94% less parameters.",
+    description: "A multi-encoder audio captioning system that generates natural-language descriptions from raw audio. PyTorch Lightning pipeline combines 3 encoders: BEATs, ConvNeXt, AST, with configurable fusions, a Conformer post-encoder, and BART decoding. Rereanking stage samples multiple candidate captions using Nucleus Sampling, ranks them using CLAP-based audio-text similarity, and refines the strongest outputs with GPT. Evaluated with FENSE and standard DCASE metrics. Achieves comparable performance to SOTA with 94% less parameters.",
     tags: ["Python", "PyTorch Lightning", "BEATs", "AST", "ConvNeXt", "BART", "Audio Captioning", "Multimodal ML"],
     images: [audioCaptioningPipeline, audioCaptioningLearnedResampling, audioCaptioningReranking],
     github: "https://github.com/RobertTylman/Automatic-Audio-Captioning-ML-2026",
