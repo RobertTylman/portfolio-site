@@ -92,6 +92,8 @@ const projects = [
     tags: ["Python", "PyTorch Lightning", "BEATs", "AST", "ConvNeXt", "BART", "Audio Captioning", "Multimodal ML"],
     images: [audioCaptioningPipeline, audioCaptioningLearnedResampling, audioCaptioningReranking],
     github: "https://github.com/RobertTylman/Automatic-Audio-Captioning-ML-2026",
+    paperLink: `${BASE_URL}AAC%20Paper.pdf`,
+    paperLinkLabel: "Read paper",
     imageFit: "cover" as const,
   },
   {
