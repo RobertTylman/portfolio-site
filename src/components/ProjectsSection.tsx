@@ -136,7 +136,7 @@ const projects = [
   },
   {
     title: "Chrome Recorder",
-    description: "A clean, lightweight Chrome extension that records and saves your browser's audio in real time. It lets users capture any sound from the browser for quick sampling, with an intuitive UI and multiple export options for seamless integration into creative or production workflows. Over 250+ active users.",
+    description: "A clean, lightweight Chrome extension that records and saves your browser's audio in real time. It lets users capture any sound from the browser for quick sampling, with an intuitive UI and multiple export options for seamless integration into creative or production workflows. Over 300+ active users.",
     tags: ["Chrome Extensions Architecture", "lame.js", "React", "TypeScript", "Web Audio API"],
     images: [crImg5, crImg4, crImg2, crImg1, crImg3],
     github: "https://github.com/RobertTylman/Chrome-Record",
