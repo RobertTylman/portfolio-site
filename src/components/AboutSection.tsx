@@ -5,17 +5,22 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
           <div>
             <h2 className="text-2xl md:text-3xl leading-relaxed font-bold">
-              About me:
+              About Me:
             </h2>
           </div>
 
           <div className="space-y-6 text-white leading-relaxed font-standard">
             <ul className="space-y-4 text-lg">
-              
               <li className="flex items-start gap-4">
                 <span className="text-primary text-xl leading-none mt-1">•</span>
                 <span>
-                  I’m a Computer Engineer and Applied AI/Machine Learning Engineer. Current FDE @Nebius (Tavily)
+                  I’m a Computer Engineer and Applied AI/Machine Learning Engineer. 
+                </span>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="text-primary text-xl leading-none mt-1">•</span>
+                <span>
+                  Current Forward Deployed Engineer @ Nebius (Tavily).
                 </span>
               </li>
               <li className="flex items-start gap-4">
