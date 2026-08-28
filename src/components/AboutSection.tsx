@@ -11,10 +11,11 @@ const AboutSection = () => {
 
           <div className="space-y-6 text-white leading-relaxed font-standard">
             <ul className="space-y-4 text-lg">
+              
               <li className="flex items-start gap-4">
                 <span className="text-primary text-xl leading-none mt-1">•</span>
                 <span>
-                  I’m a Computer Engineer and Applied AI/Machine Learning Engineer.
+                  I’m a Computer Engineer and Applied AI/Machine Learning Engineer. Current FDE @Nebius (Tavily)
                 </span>
               </li>
               <li className="flex items-start gap-4">
