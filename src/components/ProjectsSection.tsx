@@ -88,7 +88,7 @@ const projects = [
   },
   {
     title: "Context Management in RL Post-Training",
-    description: "A Tavily article on how agents manage a finite context window, and why it matters more during RL post-training, when every rollout fills that window. Covers truncation, sliding windows, summarization, relevance filtering, external memory, and context folding. Also discusses the Agent-R1 and Nemotron 3 Ultra results, and how targeted search keeps noise out of context.",
+    description: "A Tavily article on how agents manage a finite context window, and why it matters more during RL post-training. Covers truncation, sliding windows, summarization, relevance filtering, external memory, and context folding. Also discusses the Agent-R1 and Nemotron 3 Ultra results, and how targeted search keeps noise out of context.",
     tags: ["Reinforcement Learning", "Post-Training", "LLM Agents", "Context Engineering", "Tavily API"],
     images: [contextManagementTavily, contextManagementStrategies, contextManagementCompaction, contextManagementWindow],
     webstoreLink: "https://www.tavily.com/blog/understanding-the-role-of-context-management-in-rl-post-training",
