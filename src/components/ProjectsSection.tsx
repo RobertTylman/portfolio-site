@@ -49,6 +49,10 @@ import jazzBeatTrackingSplitComparison from "@/assets/jazz-beat-tracking-split-c
 import audioCaptioningPipeline from "@/assets/audio-captioning-pipeline.png";
 import audioCaptioningLearnedResampling from "@/assets/audio-captioning-learned-resampling.png";
 import audioCaptioningReranking from "@/assets/audio-captioning-reranking.png";
+import contextManagementTavily from "@/assets/context-management-tavily.png";
+import contextManagementStrategies from "@/assets/context-management-strategies.png";
+import contextManagementCompaction from "@/assets/context-management-compaction.png";
+import contextManagementWindow from "@/assets/context-management-window.png";
 
 
 const BASE_URL = import.meta.env.BASE_URL;
@@ -81,6 +85,14 @@ const projects = [
     paperLink: `${BASE_URL}AAC%20Paper.pdf`,
     paperLinkLabel: "Read paper",
     imageFit: "cover" as const,
+  },
+  {
+    title: "Context Management in RL Post-Training",
+    description: "A Tavily article on how agents manage a finite context window, and why it matters more during RL post-training, when every rollout fills that window. Covers truncation, sliding windows, summarization, relevance filtering, external memory, and context folding. Also discusses the Agent-R1 and Nemotron 3 Ultra results, and how targeted search keeps noise out of context.",
+    tags: ["Reinforcement Learning", "Post-Training", "LLM Agents", "Context Engineering", "Tavily API"],
+    images: [contextManagementTavily, contextManagementStrategies, contextManagementCompaction, contextManagementWindow],
+    webstoreLink: "https://www.tavily.com/blog/understanding-the-role-of-context-management-in-rl-post-training",
+    webstoreLinkLabel: "Read article",
   },
   {
     title: "RAG Research Extension",
